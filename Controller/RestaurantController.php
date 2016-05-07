@@ -64,14 +64,14 @@ class RestaurantController
     public static function getRestaurantDetailsWithName(String $name)
     {
         $db = DB::getInstance();
-        $query = $db->prepare("SELECT * FROM restaurants WHERE restaurant_name LIKE :name LIMIT 0,1");
+        $query = $db->prepare("SELECT * FROM restaurants WHERE restaurant_name LIKE :name");
         if ($query->execute([
                 ":name" => '%' . $name . '%'
             ]) === false
         ) {
             throw new RestException(412, "Restoran verisi veritabanından getirilemedi.");
         }
-        $ret = $query->fetch();
+        $ret = $query->fetchAll();
         if ($ret === false) {
             throw new RestException(404, "Restoran bulunamadı.");
         }
