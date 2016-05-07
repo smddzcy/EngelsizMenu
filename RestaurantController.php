@@ -18,10 +18,14 @@ class RestaurantController
     {
         $db = DB::getInstance();
         $query = $db->prepare("SELECT * FROM restaurants");
-        if($query->execute() === false){
+        if ($query->execute() === false) {
             throw new RestException(503, "Veritabanı bağlantısı kurulamadı.");
         }
-        return $query->fetchAll();
+        $ret = $query->fetchAll();
+        if($ret === false){
+            throw new RestException(404, "Restoran bulunamadı.");
+        }
+        return $ret;
     }
 
     /**
@@ -36,12 +40,89 @@ class RestaurantController
     {
         $db = DB::getInstance();
         $query = $db->prepare("SELECT * FROM restaurants WHERE restaurant_id = :id LIMIT 0,1");
-        if($query->execute([
+        if ($query->execute([
                 ":id" => $id
-            ]) === false){
+            ]) === false
+        ) {
             throw new RestException(412, "Restoran verisi veritabanından getirilemedi.");
         }
-        return $query->fetch();
+        $ret = $query->fetch();
+        if($ret === false){
+            throw new RestException(404, "Restoran bulunamadı.");
+        }
+        return $ret;
+    }
+
+    /**
+     * Get details of a restaurant with name
+     *
+     * @param string $name Name of the restaurant
+     * @return array Restaurant ID, name and location - as latitude & longitude
+     * @throws RestException DB couldn't be reached
+     * @url GET get/{name}
+     */
+    public function getRestaurantDetailsWithName(String $name)
+    {
+        $db = DB::getInstance();
+        $query = $db->prepare("SELECT * FROM restaurants WHERE restaurant_name LIKE :name LIMIT 0,1");
+        if ($query->execute([
+                ":name" => '%'.$name.'%'
+            ]) === false
+        ) {
+            throw new RestException(412, "Restoran verisi veritabanından getirilemedi.");
+        }
+        $ret = $query->fetch();
+        if($ret === false){
+            throw new RestException(404, "Restoran bulunamadı.");
+        }
+        return $ret;
+    }
+
+    /**
+     * Add a new restaurant
+     *
+     * @param string $restaurantName Restaurant name
+     * @param mixed $lat Latitude of the restaurant, default is 0
+     * @param mixed $lng Longitude of the restaurant, default is 0
+     * @return int Restaurant ID of newly added restaurant
+     * @throws RestException DB couldn't be reached
+     * @url GET add/{restaurantName}
+     */
+    public function addRestaurant(string $restaurantName, $lat = 0, $lng = 0)
+    {
+        $db = DB::getInstance();
+        $query = $db->prepare("INSERT INTO restaurants (restaurant_name, restaurant_lat, restaurant_lng) VALUES (:restaurantName, :lat, :lng)");
+        if ($query->execute([
+                ":restaurantName" => $restaurantName,
+                ":lat" => $lat,
+                ":lng" => $lng
+            ]) === false
+        ) {
+            throw new RestException(412, "Restoran veritabanına eklenemedi.");
+        }
+        return (int)$db->lastInsertId();
+    }
+
+    /**
+     * Check if a restaurant exists, with its ID
+     *
+     * @param int $id ID of the restaurant
+     * @return array True if restaurant exists, false otherwise
+     * @throws RestException DB couldn't be reached
+     * @url GET check/{id}
+     */
+    public static function restaurantExists(int $id)
+    {
+        $db = DB::getInstance();
+        $query = $db->prepare("SELECT * FROM restaurants WHERE restaurant_id = :id LIMIT 0,1");
+        if ($query->execute([
+                ":id" => $id
+            ]) === false
+        ) {
+            throw new RestException(412, "Restoran verisi veritabanından getirilemedi.");
+        }
+        $query->fetch();
+        return $query->rowCount() > 0;
     }
 
 

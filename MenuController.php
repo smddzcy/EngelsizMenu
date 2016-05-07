@@ -26,7 +26,37 @@ class MenuController
         ) {
             throw new RestException(412, "Menu verisi veritabanından getirilemedi.");
         }
-        return $query->fetchAll();
+        $ret = $query->fetchAll();
+        if ($ret === false) {
+            throw new RestException(404, "Menü bulunamadı.");
+        }
+        return $ret;
+    }
+
+    /**
+     * Add menu to a restaurant
+     *
+     * @param int $id ID of the restaurant
+     * @param string $menuName Menu name
+     * @return int Menu ID of newly added menu
+     * @throws RestException DB couldn't be reached
+     * @url GET add/{id}/{menuName}
+     */
+    public function addMenuWithRestaurantID(int $id, string $menuName)
+    {
+        $db = DB::getInstance();
+        if (!RestaurantController::restaurantExists($id)) {
+            throw new RestException(404, "Restoran veritabanında bulunamadı.");
+        }
+        $query = $db->prepare("INSERT INTO menus (restaurant_id, menu_name) VALUES (:id, :menuName)");
+        if ($query->execute([
+                ":id" => $id,
+                ":menuName" => $menuName
+            ]) === false
+        ) {
+            throw new RestException(412, "Menu veritabanına eklenemedi.");
+        }
+        return (int)$db->lastInsertId();
     }
 
 
