@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - engelsizhackathon@localhost" uuid="cb6f10ba-03ea-4fba-866d-21e0d047a3c1">
+    <database-info product="MySQL" version="5.7.11" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="engelsizhackathon"/>
+      <table id="2" parent="1" name="dishes"/>
+      <table id="3" parent="1" name="menus"/>
+      <table id="4" parent="1" name="restaurants"/>
+      <column id="5" parent="2" name="menu_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="6" parent="2" name="dish_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="7" parent="2" name="dish_price">
+        <data-type>double(4,2) unsigned</data-type>
+      </column>
+      <column id="8" parent="2" name="dish_price_currency">
+        <mandatory>1</mandatory>
+        <data-type>varchar(3)</data-type>
+        <default-expression>&apos;TRY&apos;</default-expression>
+      </column>
+      <column id="9" parent="2" name="dish_description">
+        <data-type>text</data-type>
+      </column>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>menu_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="11" parent="3" name="restaurant_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="12" parent="3" name="menu_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="13" parent="3" name="menu_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="14" parent="3" name="UC_MENU_ID">
+        <columns>menu_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="15" parent="3" name="PRIMARY">
+        <columns>menu_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="16" parent="3" name="UC_MENU_ID">
+        <columns>menu_id</columns>
+        <underlying-index>UC_MENU_ID</underlying-index>
+      </key>
+      <column id="17" parent="4" name="restaurant_id">
+        <mandatory>1</mandatory>
+        <data-type>int(10) unsigned</data-type>
+      </column>
+      <column id="18" parent="4" name="restaurant_name">
+        <data-type>text</data-type>
+      </column>
+      <column id="19" parent="4" name="restaurant_lng">
+        <comment>Longitude</comment>
+        <data-type>decimal(10)</data-type>
+      </column>
+      <column id="20" parent="4" name="restaurant_lat">
+        <comment>Latitude</comment>
+        <data-type>decimal(10)</data-type>
+      </column>
+      <index id="21" parent="4" name="UC_RESTAURANT_ID">
+        <columns>restaurant_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="22" parent="4" name="PRIMARY">
+        <columns>restaurant_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="23" parent="4" name="UC_RESTAURANT_ID">
+        <columns>restaurant_id</columns>
+        <underlying-index>UC_RESTAURANT_ID</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>
