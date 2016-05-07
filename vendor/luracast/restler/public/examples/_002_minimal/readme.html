@@ -27,7 +27,7 @@
             function() {
                 $('dd pre code').each(function(i, e) {
                     text = $(e).text();
-                    $(e).addClass(text.charAt(0) == '<' ? 'xml' : 'json')
+                    $(e).addClass(text.charAt(0) == '<' ? 'xml' : 'json');
                     //hljs.highlightBlock(e);
                 });
                 $('pre code').each(function(i, e) {

@@ -41,7 +41,7 @@
       this.failure = options.failure != null ? options.failure : function() {};
       this.progress = options.progress != null ? options.progress : function() {};
       this.headers = options.headers != null ? options.headers : {};
-      this.booleanValues = options.booleanValues != null ? options.booleanValues : new Array('true', 'false');
+      this.booleanValues = options.booleanValues != null ? options.booleanValues : ['true', 'false'];
       this.discoveryUrl = this.suffixApiKey(this.discoveryUrl);
       if (options.success != null) {
         this.build();

@@ -16,7 +16,7 @@ class DishController
      * @throws RestException DB couldn't be reached
      * @url GET get/{id}
      */
-    public function getDishesWithMenuID(int $id)
+    public static function getDishesWithMenuID(int $id)
     {
         $db = DB::getInstance();
         $query = $db->prepare("SELECT * FROM dishes WHERE menu_id = :id");
@@ -44,7 +44,7 @@ class DishController
      * @throws RestException DB couldn't be reached
      * @url GET add/{id}/{dishName}/{dishPrice}/{dishDescription}
      */
-    public function addDishWithMenuID(int $id, string $dishName, string $dishPrice, string $dishDescription)
+    public static function addDishWithMenuID(int $id, string $dishName, string $dishPrice, string $dishDescription)
     {
         $db = DB::getInstance();
         $query = $db->prepare("INSERT INTO dishes (menu_id, dish_name, dish_description, dish_price) VALUES (:id, :dishName, :dishDescription, :dishPrice)");

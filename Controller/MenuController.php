@@ -16,7 +16,7 @@ class MenuController
      * @throws RestException DB couldn't be reached
      * @url GET get/{id}
      */
-    public function getMenusWithRestaurantID(int $id)
+    public static function getMenusWithRestaurantID(int $id)
     {
         $db = DB::getInstance();
         $query = $db->prepare("SELECT * FROM menus WHERE restaurant_id = :id");
@@ -42,10 +42,10 @@ class MenuController
      * @throws RestException DB couldn't be reached
      * @url GET add/{id}/{menuName}
      */
-    public function addMenuWithRestaurantID(int $id, string $menuName)
+    public static function addMenuWithRestaurantID(int $id, string $menuName)
     {
         $db = DB::getInstance();
-        if (!RestaurantController::restaurantExists($id)) {
+        if (!RestaurantController::checkIfRestaurantExistsWithID($id)) {
             throw new RestException(404, "Restoran veritabanında bulunamadı.");
         }
         $query = $db->prepare("INSERT INTO menus (restaurant_id, menu_name) VALUES (:id, :menuName)");

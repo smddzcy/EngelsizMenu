@@ -92,7 +92,6 @@ Handlebars.registerHelper('with', function(context, options) {
 Handlebars.registerHelper('log', function(context) {
   Handlebars.log(context);
 });
-;
 // lib/handlebars/utils.js
 Handlebars.Exception = function(message) {
   var tmp = Error.prototype.constructor.apply(this, arguments);
@@ -156,7 +155,7 @@ Handlebars.SafeString.prototype.toString = function() {
       }
     }
   };
-})();;
+})();
 // lib/handlebars/runtime.js
 Handlebars.VM = {
   template: function(templateSpec) {
@@ -220,4 +219,4 @@ Handlebars.VM = {
 };
 
 Handlebars.template = Handlebars.VM.template;
-;
+

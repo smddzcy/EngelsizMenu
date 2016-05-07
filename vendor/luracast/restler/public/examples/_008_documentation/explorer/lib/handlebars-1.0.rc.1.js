@@ -109,7 +109,6 @@ Handlebars.registerHelper('log', function(context) {
 });
 
 }(this.Handlebars));
-;
 // lib/handlebars/compiler/parser.js
 /* Jison generated parser */
 var handlebars = (function(){
@@ -490,7 +489,7 @@ pushState:function begin(condition) {
 lexer.options = {};
 lexer.performAction = function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 
-var YYSTATE=YY_START
+var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:
                                    if(yy_.yytext.slice(-1) !== "\\") this.begin("mu");
@@ -562,7 +561,7 @@ break;
 };
 lexer.rules = [/^(?:[^\x00]*?(?=(\{\{)))/,/^(?:[^\x00]+)/,/^(?:[^\x00]{2,}?(?=(\{\{|$)))/,/^(?:\{\{>)/,/^(?:\{\{#)/,/^(?:\{\{\/)/,/^(?:\{\{\^)/,/^(?:\{\{\s*else\b)/,/^(?:\{\{\{)/,/^(?:\{\{&)/,/^(?:\{\{![\s\S]*?\}\})/,/^(?:\{\{)/,/^(?:=)/,/^(?:\.(?=[} ]))/,/^(?:\.\.)/,/^(?:[\/.])/,/^(?:\s+)/,/^(?:\}\}\})/,/^(?:\}\})/,/^(?:"(\\["]|[^"])*")/,/^(?:'(\\[']|[^'])*')/,/^(?:@[a-zA-Z]+)/,/^(?:true(?=[}\s]))/,/^(?:false(?=[}\s]))/,/^(?:[0-9]+(?=[}\s]))/,/^(?:[a-zA-Z0-9_$-]+(?=[=}\s\/.]))/,/^(?:\[[^\]]*\])/,/^(?:.)/,/^(?:$)/];
 lexer.conditions = {"mu":{"rules":[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],"inclusive":false},"emu":{"rules":[2],"inclusive":false},"INITIAL":{"rules":[0,1,28],"inclusive":true}};
-return lexer;})()
+return lexer;})();
 parser.lexer = lexer;
 function Parser () { this.yy = {}; }Parser.prototype = parser;parser.Parser = Parser;
 return new Parser;
@@ -570,7 +569,7 @@ return new Parser;
 if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
 exports.parser = handlebars;
 exports.Parser = handlebars.Parser;
-exports.parse = function () { return handlebars.parse.apply(handlebars, arguments); }
+exports.parse = function () { return handlebars.parse.apply(handlebars, arguments); };
 exports.main = function commonjsMain(args) {
     if (!args[1])
         throw new Error('Usage: '+args[0]+' FILE');
@@ -581,12 +580,11 @@ exports.main = function commonjsMain(args) {
         source = require("file").path(require("file").cwd()).join(args[1]).read({charset: "utf-8"});
     }
     return exports.parser.parse(source);
-}
+};
 if (typeof module !== 'undefined' && require.main === module) {
   exports.main(typeof process !== 'undefined' ? process.argv.slice(1) : require("system").args);
 }
-};
-;
+}
 // lib/handlebars/compiler/base.js
 Handlebars.Parser = handlebars;
 
@@ -607,7 +605,6 @@ Handlebars.logger = {
 };
 
 Handlebars.log = function(level, str) { Handlebars.logger.log(level, str); };
-;
 // lib/handlebars/compiler/ast.js
 (function() {
 
@@ -726,7 +723,7 @@ Handlebars.log = function(level, str) { Handlebars.logger.log(level, str); };
     this.comment = comment;
   };
 
-})();;
+})();
 // lib/handlebars/utils.js
 Handlebars.Exception = function(message) {
   var tmp = Error.prototype.constructor.apply(this, arguments);
@@ -791,7 +788,7 @@ Handlebars.SafeString.prototype.toString = function() {
       }
     }
   };
-})();;
+})();
 // lib/handlebars/compiler/compiler.js
 
 /*jshint eqnull:true*/
@@ -890,7 +887,7 @@ Handlebars.JavaScriptCompiler = function() {};
       for(var i=0, l=result.depths.list.length; i<l; i++) {
         depth = result.depths.list[i];
 
-        if(depth < 2) { continue; }
+        if(depth < 2) {  }
         else { this.addDepth(depth - 1); }
       }
 
@@ -1853,7 +1850,6 @@ Handlebars.compile = function(string, options) {
     return compiled.call(this, context, options);
   };
 };
-;
 // lib/handlebars/runtime.js
 Handlebars.VM = {
   template: function(templateSpec) {
@@ -1917,4 +1913,4 @@ Handlebars.VM = {
 };
 
 Handlebars.template = Handlebars.VM.template;
-;
+
