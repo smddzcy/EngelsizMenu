@@ -38,7 +38,14 @@ class MenuFetcher
             preg_match_all("#<li>(.*?)</li>#si", $menu, $dishes);
             foreach ($dishes[1] as $dish) {
                 preg_match('#<a[^<]*data-product-id[^>]*>(.*?)</a>#si', $dish, $dishName);
-                $dishName = $dishName[1];
+                if (preg_match('#data-productname="([^"]*)"#si', $dishName[1], $tempOutput)) {
+                    $dishName = $tempOutput[1];
+                    if(preg_match('#[^0-9]*\\.\\s(.*)$#si', $dishName, $temp)){
+                        $dishName = $temp[1];
+                    }
+                } else {
+                    $dishName = $dishName[1];
+                }
 
                 preg_match('#class="productInfo">[^<]*<p>([^<]*)</p>#si', $dish, $dishDescription);
                 $dishDescription = $dishDescription[1];

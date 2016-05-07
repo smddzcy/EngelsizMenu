@@ -79,6 +79,29 @@ class RestaurantController
     }
 
     /**
+     * Get details of a restaurant with location
+     *
+     * @param mixed $lat Latitude
+     * @param mixed $lng Longitude
+     * @return array Restaurant ID, name and location - as latitude & longitude
+     * @throws RestException DB couldn't be reached
+     * @url GET get/{lat}/{lng}
+     */
+    public static function getRestaurantDetailsWithLocation($lat, $lng)
+    {
+        $allRestaurants = self::getAllRestaurants();
+        array_walk($allRestaurants, function (&$val) use ($lat, $lng) {
+            $val["distance"] = pow($lng - $val["restaurant_lng"], 2) + pow($lat - $val["restaurant_lat"], 2);
+            return $val;
+        });
+        usort($allRestaurants, function ($priority1, $priority2) {
+            if ($priority1 === $priority2) return 0;
+            return $priority1["distance"] < $priority2["distance"] ? -1 : 1;
+        });
+        return array_slice($allRestaurants, 0, 5, true); // return 5 results
+    }
+
+    /**
      * Add a new restaurant
      *
      * @param string $restaurantName Restaurant name
