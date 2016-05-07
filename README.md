@@ -1,2 +1,0 @@
-# EngelsizHackathon
-Engelsiz Hackathon Project

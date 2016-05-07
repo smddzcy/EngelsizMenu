@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab11cdb8-f693-4df1-9dfb-9fd82e59b8a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DishController.php" afterPath="$PROJECT_DIR$/DishController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MenuController.php" afterPath="$PROJECT_DIR$/MenuController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RestaurantController.php" afterPath="$PROJECT_DIR$/RestaurantController.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
     </list>
     <ignored path="EngelsizHackathon.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +34,8 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state relative-caret-position="180">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -47,8 +44,8 @@
       <file leaf-file-name="MenuController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MenuController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
               <folding>
                 <marker date="1462623337000" expanded="true" signature="475:520" placeholder="SELECT * FRO... menus" />
                 <marker date="1462623337000" expanded="true" signature="1446:1464" placeholder="INSERT INTO *... " />
@@ -76,8 +73,8 @@
       <file leaf-file-name="RestaurantController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RestaurantController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="119" column="24" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
+            <state relative-caret-position="-990">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding>
                 <marker date="1462623312000" expanded="true" signature="452:477" placeholder="SELECT * FRO... restaurants" />
                 <marker date="1462623312000" expanded="true" signature="1172:1223" placeholder="SELECT * FRO... restaurants" />
@@ -120,8 +117,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="880" />
-    <option name="height" value="731" />
+    <option name="width" value="1280" />
+    <option name="height" value="732" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -236,18 +233,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1462610412250</updated>
-      <workItem from="1462610413743" duration="7195000" />
+      <workItem from="1462610413743" duration="7496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7195000" />
+    <option name="totallyTimeSpent" value="7496000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="880" height="731" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="732" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22434367" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15185784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -353,34 +350,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="801" column="38" selection-start-line="801" selection-start-column="38" selection-end-line="801" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RestaurantController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="119" column="24" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
-          <folding>
-            <marker date="1462623312000" expanded="true" signature="452:477" placeholder="SELECT * FRO... restaurants" />
-            <marker date="1462623312000" expanded="true" signature="1172:1223" placeholder="SELECT * FRO... restaurants" />
-            <marker date="1462623312000" expanded="true" signature="1172:1233" placeholder="SELECT * FRO... restaurants" />
-            <marker date="1462623312000" expanded="true" signature="2007:2075" placeholder="SELECT * FRO... restaurants" />
-            <marker date="1462623312000" expanded="true" signature="2984:3094" placeholder="INSERT INTO restaurants... " />
-            <marker date="1462623312000" expanded="true" signature="3800:3861" placeholder="SELECT * FRO... restaurants" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -396,10 +370,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RestaurantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-990">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <marker date="1462623312000" expanded="true" signature="452:477" placeholder="SELECT * FRO... restaurants" />
+            <marker date="1462623312000" expanded="true" signature="1172:1223" placeholder="SELECT * FRO... restaurants" />
+            <marker date="1462623312000" expanded="true" signature="1172:1233" placeholder="SELECT * FRO... restaurants" />
+            <marker date="1462623312000" expanded="true" signature="2007:2075" placeholder="SELECT * FRO... restaurants" />
+            <marker date="1462623312000" expanded="true" signature="2984:3094" placeholder="INSERT INTO restaurants... " />
+            <marker date="1462623312000" expanded="true" signature="3800:3861" placeholder="SELECT * FRO... restaurants" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MenuController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="360">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
           <folding>
             <marker date="1462623337000" expanded="true" signature="475:520" placeholder="SELECT * FRO... menus" />
             <marker date="1462623337000" expanded="true" signature="1446:1464" placeholder="INSERT INTO *... " />
