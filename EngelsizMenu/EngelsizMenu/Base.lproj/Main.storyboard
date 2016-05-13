@@ -263,10 +263,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="rEE-DO-bnF" appends="YES" id="SCe-bg-qNP"/>
-                                    <outletCollection property="gestureRecognizers" destination="yMq-e1-aDf" appends="YES" id="YEO-jU-v0w"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -288,16 +284,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efj-ho-dU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="left" numberOfTouchesRequired="3" id="yMq-e1-aDf" userLabel="2 Finger Left Swipe">
-                    <connections>
-                        <action selector="leftSwipe:" destination="7wh-es-eYx" id="K7K-oI-Jqk"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" numberOfTouchesRequired="3" id="rEE-DO-bnF" userLabel="2 Finger Right Swipe">
-                    <connections>
-                        <action selector="rightSwipe:" destination="7wh-es-eYx" id="BY2-aS-GrO"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1733" y="316"/>
         </scene>

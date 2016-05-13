@@ -10,38 +10,15 @@ import UIKit
 import Alamofire
 import UIKit.UIGestureRecognizerSubclass
 
+// todo: url encode & validation on input
+// todo: 3 finger swipe accessibility problem
+
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var restaurant: Restaurant!
     var menus: [Menu] = [Menu]()
-    
-    @IBAction func rightSwipe(sender: UISwipeGestureRecognizer) {
-        if sender.state == UIGestureRecognizerState.Ended {
-            if let indexPath = tableView.indexPathsForVisibleRows?[0]{
-                if let headerToFocus = self.tableView.headerViewForSection(max(menus.count-1,(indexPath.section) + 1)){
-                    self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-                    headerToFocus.textLabel!.becomeFirstResponder()
-                    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, headerToFocus.textLabel!)
-                    tableView.setNeedsDisplay()
-                }
-            }
-        }
-    }
-    
-    @IBAction func leftSwipe(sender: UISwipeGestureRecognizer) {
-        if sender.state == UIGestureRecognizerState.Ended {
-            if let indexPath = tableView.indexPathsForVisibleRows?[0]{
-                if let headerToFocus = self.tableView.headerViewForSection(max(0,(indexPath.section) - 1)){
-                    self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-                    headerToFocus.textLabel!.becomeFirstResponder()
-                    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, headerToFocus.textLabel!)
-                    tableView.setNeedsDisplay()
-                }
-            }
-        }
-    }
     
     /**
      Swipe between menu categories with 3 fingers
